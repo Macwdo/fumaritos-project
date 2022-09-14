@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-sx2v@fzav1=^%r178)b+53r5+!p-y5_5s*ek4g(dnxy68#pxgb
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://fumaritos-project.heroku.com/']
+ALLOWED_HOSTS = ['https://fumaritos-project.herokuapp.com/']
 
 
 # Application definition
