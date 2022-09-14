@@ -14,10 +14,6 @@
                 {% endfor %}
             </div>
         {% endif %}
-        <form action="{% url "product:logout" %}" method="post">
-            {% csrf_token %}
-            <button type="submit"> Send </button>
-        </form>
 
     </body>
 
