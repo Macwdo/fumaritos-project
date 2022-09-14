@@ -1,0 +1,13 @@
+45        BLACK SHEEP       1500        Grape Ice         38          8        304        100        800
+46             NIKBAR       1500       banana ice         47          2         94         90        180
+47             NIKBAR       1500   Watermelon ice         47          1         47         90         90
+48             NIKBAR       1500    Blueberry ice         47          1         47         90         90
+49             NIKBAR       1500        cool mint         47          2         94         90        180
+50             NIKBAR       1500        grape Ice         47          1         47         90         90
+51             NIKBAR       1500      Strawberry          47          1         47         90         90
+52        BLACK SHEEP        600  Frosted berries         36          3        108         65        195
+53        BLACK SHEEP        600   Strawberry Ice         36          1         36         65         65
+54           Vapesoul       1000   strawberry ice         39          1         39         80         80
+55           Vapesoul       1000         lush ice         39          1         39         80         80
+56           Vapesoul       1000            grape         39          2         78         80        160
+57           Vapesoul       1000         Lemonade         39          1         39         80         80

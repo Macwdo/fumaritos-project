@@ -1,0 +1,24 @@
+{% load static %}
+
+<html>
+    {% include "product/head.html" %}
+    {% include "product/header.html" %}
+    <body>
+
+        {% include 'product/card.html' %}
+        <div></div>
+        {% if messages %}
+            <div class="alert alert-danger" role="alert" >
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            </div>
+        {% endif %}
+        <form action="{% url "product:logout" %}" method="post">
+            {% csrf_token %}
+            <button type="submit"> Send </button>
+        </form>
+
+    </body>
+
+</html>

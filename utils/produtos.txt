@@ -1,0 +1,29 @@
+7    IGNITE V15  1500  Strawberry apple watermelon    63    0          0        110         0
+8    IGNITE V15  1500                     icy mint    63    0          0        110         0
+9    IGNITE V15  1500               Watermelon ice    63    0          0        110         0
+10   IGNITE V15  1500                Blueberry Ice    63    0          0        110         0
+11   IGNITE V15  1500                   Banana Ice    63    0          0        110         0
+12   IGNITE V15  1500           Cranberry Lemonade    63    0          0        110         0
+13   IGNITE V15  1500         Strawberry Guava Ice    63    0          0        110         0
+14   IGNITE V15  1500                Blue Razz ice    63    0          0        110         0
+15   IGNITE V15  1500                      skitles    63    0          0        110         0
+17          HQD  1200                    Grape Ice  39.9    0          0         90         0
+18          HQD  1200                         Lush  39.9    0          0         90         0
+19          HQD  1200        Strawberry banana Ice  39.9    0          0         90         0
+21       NIKBAR  1500                Blueberry ice    47    1         47         90        90
+22       NIKBAR  1500                    cool mint    47    0          0         90         0
+23       NIKBAR  1500               Watermelon ice    47    1         47         90        90
+24       NIKBAR  1500                   banana ice    47    0          0         90         0
+25       NIKBAR  1500                    grape Ice    47    0          0         90         0
+26       NIKBAR  1500                  Strawberry     47    0          0         90         0
+28     Vapesoul  1000                        grape    39    2         78         80       160
+29     Vapesoul  1000               strawberry ice    39    0          0         80         0
+30     Vapesoul  1000                     lush ice    39    0          0         80         0
+31     Vapesoul  1000                     Lemonade    39    0          0         80         0
+33  BLACK SHEEP   600               Strawberry Ice    36    1         36         65        65
+34  BLACK SHEEP   600                    Grape Ice    36    0          0         65         0
+35  BLACK SHEEP   600                Pineapple Ice    36    0          0         65         0
+36  BLACK SHEEP   600              Frosted berries    36    0          0         65         0
+38  BLACK SHEEP  1500               Strawberry Ice    62    0          0        100         0
+39  BLACK SHEEP  1500              Frosted berries    62    0          0        100         0
+40  BLACK SHEEP  1500                    Grape Ice    62    1         62        100       100

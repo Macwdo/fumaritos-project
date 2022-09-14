@@ -1,0 +1,20 @@
+    <nav style="background-color: #6f42c1 ; height: 130px;" class="navbar navbar-expand-sm">
+
+        <a style="color: white ;font-size: 30px" href="{% url 'product:home' %}" class="navbar-brand">FuMaRiToS</a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#targetado">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="targetado">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item ">
+                    <a style="color: #FFFFFF;font-size: 22px ;" href="{% url 'product:history_info'%}" class="nav-link active">Histórico</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a  style="color: #FFFFFF; ;font-size: 22px ;" href="/admin" target="_blank" class="nav-link">Admin</a>
+                </li>
+            </ul>
+            
+        </div>
+
+    </nav>
