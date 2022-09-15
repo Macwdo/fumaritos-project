@@ -125,7 +125,7 @@ def create_product_view(request):
             'preco': request.POST.get('preco', None)
         }
         
-        getpuff = str(data.get.('puffs'))
+        getpuff = str(data.get('puffs'))
         
         if getpuff.isnumeric:
         
