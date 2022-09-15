@@ -11,12 +11,12 @@ class DadosVenda(models.Model):
         return self.produtoinfo
 
 class Produto(models.Model):
-    marca = models.CharField(max_length=30,default='')
-    puffs = models.CharField(max_length=4,default='')
-    sabor = models.CharField(max_length=100,default='')
-    custo = models.FloatField(default=0)
-    preco = models.FloatField(default=0)
-    estoque = models.IntegerField(default=0)
+    marca = models.CharField(max_length=30)
+    puffs = models.CharField(max_length=4)
+    sabor = models.CharField(max_length=100)
+    custo = models.FloatField()
+    preco = models.FloatField()
+    estoque = models.IntegerField()
     vendidos = models.IntegerField(default=0)
     
     def __str__(self):
