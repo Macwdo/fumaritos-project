@@ -2,13 +2,14 @@ from django.db import models
 
 # Create your models here.
 class DadosVenda(models.Model):
-    produtoinfo = models.CharField(max_length=60)
+    produtoinfo = models.CharField(max_length=68)
     quantidade = models.CharField(max_length=2)
     dia = models.CharField(max_length=12)
-    hora = models.CharField(max_length=8)
+    hora = models.CharField(max_length=9)
     
     def __str__(self):
         return self.produtoinfo
+
 
 class Produto(models.Model):
     marca = models.CharField(max_length=30)
