@@ -77,10 +77,14 @@ WSGI_APPLICATION = 'base.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+   'default': {
+       'ENGINE': 'django.db.backends.postgresql',
+       'NAME': 'deg3cp55030dcj',
+       'USER': 'fuhcavzwtotnge',
+       'PASSWORD': '54da4eaca49d08a90bc58c2dcebfe14f2cb2b1522f2444a4606e656319495f89',
+       'HOST': 'ec2-3-229-165-146.compute-1.amazonaws.com',
+       'PORT': '5432',
+   }
 }
 
 
@@ -128,5 +132,4 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-django_heroku.settings(locals())
+ 
