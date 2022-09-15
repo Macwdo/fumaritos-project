@@ -20,3 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('product.urls'))
 ]
+
+handler404 = "product.views.py.render404"

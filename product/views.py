@@ -124,15 +124,22 @@ def create_product_view(request):
             'custo': request.POST.get('custo', None),
             'preco': request.POST.get('preco', None)
         }
-        for i in data.values():
-            i = str(i)
-            if i == '':
-                messages.error(request, 'Por Favor Preencha todos os campos.')
-                return redirect(reverse('product:create_product'))
-        product = Produto.objects.create(**data)
-        product.save()
-        messages.success(request, 'Novo produto Criado com Sucesso')
-        return redirect(reverse('product:home'))
+        
+        getpuff = str(data.get.('puffs'))
+        
+        if getpuff.isnumeric:
+        
+            for i in data.values():
+                i = str(i)
+                if i == '':
+                    messages.error(request, 'Por Favor Preencha todos os campos.')
+                    return redirect(reverse('product:create_product'))
+            product = Produto.objects.create(**data)
+            product.save()
+            messages.success(request, 'Novo produto Criado com Sucesso')
+            return redirect(reverse('product:home'))
+        else:
+            return messages.error(request,"Insira um numero valido para o campo Puffs")
     
 def render404(request,exception):
     return render(request,'product/error.html')
