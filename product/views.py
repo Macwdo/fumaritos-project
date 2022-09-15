@@ -12,7 +12,7 @@ import pytz
 
 @login_required()
 def homepage(request):
-    produto = Produto.objects.all()
+    produto = Produto.objects.all().order_by('marca')
     return render(request, 'product/home.html', context={
         'produtos': produto,
     })
