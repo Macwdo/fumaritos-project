@@ -96,7 +96,7 @@
                                             </div>
                                             <div class="modal-body">
                             
-                                                <p style="font-family: 'Varela Round', sans-serif;font-weight: bold;" >Informe a quantidade a ser vendida:</p>
+                                                <p style="font-family: 'Varela Round', sans-serif;font-weight: bold;" >Informe a quantidade a ser vendida: quantidade atual no estoque <b>{{produto.estoque}}</b></p>
                                                 <input type="number" name="sell_qtd" id="">
                             
                                             </div>
@@ -115,12 +115,13 @@
                                         <form method="POST" action="{% url 'product:add_product' produto.id %}">
                                             {% csrf_token %}
                                             <div class="modal-header">						
-                                                <h4 class="modal-title">Adicionar ao Estoque</h4>
+                                                <h4 class="modal-title"><b>Adicionar ao Estoque</b></h4>
                                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                             </div>
                                             <div class="modal-body">					
                                                 <div class="form-group">
-                                                    <label>Quantidade</label>
+                                                    <label>Quantidade:</label>
+                                                    <p>Adiciona mais produto ao estoque ou exclui ele do estoque</p>
                                                     <input type="number" name="qtd_add" class="form-control" required>
                                                 </div>				
                                             </div>
