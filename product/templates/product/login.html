@@ -58,6 +58,15 @@
                             <h4 class="" style="font-size: 16px ;">Não tem uma conta ?</h4>
                             <p><a href=""> Registre-se</a></p>
                         </div>
+                        {% if messages %}
+                            {% for message in messages %}
+                            <div class="alert alert-success" role="alert" >
+                                {{message}}
+                            </div>
+                            {% endfor %}
+                        
+                        {% else %}
+                        {% endif %}
                         <br>
                         
                     </form>

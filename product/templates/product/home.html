@@ -15,6 +15,10 @@
             </div>
         {% endif %}
 
+        <form action="{% url 'product:logout' %}" method="post">
+            {% csrf_token %}
+            <button class="btn" type="submit">Deslogar</button>
+        </form>
     </body>
 
 </html>
