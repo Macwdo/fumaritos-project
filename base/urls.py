@@ -22,3 +22,5 @@ urlpatterns = [
 ]
 
 handler404 = "product.views.py.render404"
+
+handler500 = "product.views.py.render500"

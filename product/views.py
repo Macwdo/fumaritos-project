@@ -143,6 +143,9 @@ def create_product_view(request):
     
 def render404(request,exception):
     return render(request,'product/error.html')
+
+def render500(request,exception):
+    return render(request,'product/error.html')
     
 def delete_product(request, id):
     if request.method == "POST":
