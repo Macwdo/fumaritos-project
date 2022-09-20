@@ -5,7 +5,8 @@
     {% include "product/header.html" %}
     <body>
 
-        {% include 'product/card.html' %}
+        {% include 'product/table_part.html' %}
+        {% include 'product/register_part.html' %}
         {% if messages %}
                 {% for message in messages %}
                 {% if message.tags == 'success' %}

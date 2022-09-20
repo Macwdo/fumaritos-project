@@ -110,9 +110,6 @@ def history_info(request):
     return render(request, 'product/history_info.html', {'dados': dados})
 
 
-def create_product(request):
-    return render(request,'product/create_product.html')
-
 
 def create_product_view(request):
     if request.method == "POST":
@@ -133,7 +130,7 @@ def create_product_view(request):
                 i = str(i)
                 if i == '':
                     messages.error(request, 'Por Favor Preencha todos os campos.')
-                    return redirect(reverse('product:create_product'))
+                    return redirect(reverse('product:home'))
             product = Produto.objects.create(**data)
             product.save()
             messages.success(request, 'Novo produto Criado com Sucesso')
@@ -156,5 +153,23 @@ def delete_regs(request, id):
         dados.delete()
     return redirect(reverse('product:history_info'))
 
-    
+def dashboard(request):
+    produtos_data = DadosVenda.objects.all()
+    produto = Produto.objects.all()
+    #Custo Estoque
+    custo_estoque = 0
+    preco_estoque = 0
+    for i in produto:
+        custo_estoque += (i.estoque * i.custo )
+        preco_estoque += (i.estoque * i.preco )
+        lucro = (i.preco * i.vendidos) - (i.custo * i.vendidos)
+
+    return render(request,"product/dashboard.html",{
+        'produtos_data':produtos_data,
+        'produtos':produto,
+        'preco_estoque':preco_estoque,
+        'custo_estoque':custo_estoque,
+        'lucro':lucro
+        
+        })
     

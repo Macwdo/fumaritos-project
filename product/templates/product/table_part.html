@@ -82,60 +82,8 @@
                                         </form>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div id="sellEmployeeModal {{produto.id}}" class="modal fade">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <form method="POST" action="{% url 'product:sell_product' produto.id %}">
-                            
-                                            {% csrf_token %}
-                                            <div class="modal-header">						
-                                                <h4 class="modal-title">Vender Produto</h4>
-                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                            </div>
-                                            <div class="modal-body">
-                            
-                                                <p style="font-family: 'Varela Round', sans-serif;" ><b>Informe a quantidade a ser vendida:</b> quantidade atual no estoque <b>{{produto.estoque}}</b></p>
-                                                <input type="number" name="sell_qtd" id="">
-                            
-                                            </div>
-                                            <div class="modal-footer">
-                                                <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                                                <input type="submit" class="btn btn-success">
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div id="editEmployeeModal {{produto.id}}" class="modal fade">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <form method="POST" action="{% url 'product:add_product' produto.id %}">
-                                            {% csrf_token %}
-                                            <div class="modal-header">						
-                                                <h4 class="modal-title"><b>Adicionar ao Estoque</b></h4>
-                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                            </div>
-                                            <div class="modal-body">					
-                                                <div class="form-group">
-                                                    <label>Quantidade:</label>
-                                                    <p>Adiciona mais produto ao estoque <br>
-                                                        Exclua algum produto do estoque
-                                                    </p>
-                                                    <input type="number" name="qtd_add" class="form-control" required>
-                                                </div>				
-                                            </div>
-                                            <div class="modal-footer">
-                                                <input type="submit" class="btn btn-danger" name="exc" value="Excluir">
-                                                <input type="submit" class="btn btn-success" name="add" value="Gerar">
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>                            
-                            
+                            </div>                  
+                            {% include 'product/employeemodal.html' %}       
                             {% endfor %}
                         </tr>
                 </tbody>
