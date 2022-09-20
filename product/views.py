@@ -140,12 +140,7 @@ def create_product_view(request):
             return redirect(reverse('product:home'))
         else:
             return messages.error(request,"Insira um numero valido para o campo Puffs")
-    
-def render404(request,exception):
-    return render(request,'product/error.html')
 
-def render500(request,exception):
-    return render(request,'product/error.html')
     
 def delete_product(request, id):
     if request.method == "POST":
@@ -157,6 +152,9 @@ def delete_product(request, id):
 def delete_regs(request, id):
     if request.method == "POST":
         dados = DadosVenda.objects.filter(id=id)
+        messages.success(request,f'O Registro {dados.first()} foi deletado com sucesso.')
         dados.delete()
     return redirect(reverse('product:history_info'))
-        
+
+    
+    

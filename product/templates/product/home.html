@@ -6,13 +6,18 @@
     <body>
 
         {% include 'product/card.html' %}
-        <div></div>
         {% if messages %}
-            <div class="alert alert-success" role="alert" >
                 {% for message in messages %}
-                    {{ message }}
+                {% if message.tags == 'success' %}
+                    <div class="alert alert-success" role="alert" >
+                        {{ message }}
+                    </div>
+                {% else %}
+                    <div class="alert alert-danger" role="alert" >
+                        {{ message }}
+                    </div>
+                {% endif %}
                 {% endfor %}
-            </div>
         {% endif %}
 
         <form action="{% url 'product:logout' %}" method="post">
