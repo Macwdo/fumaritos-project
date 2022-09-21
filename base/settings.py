@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 from os import path
 import os
-# import django_heroku
+import django_heroku
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -27,9 +27,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-sx2v@fzav1=^%r178)b+53r5+!p-y5_5s*ek4g(dnxy68#pxgb'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['fumaritos-project.herokuapp.com','0.0.0.0']
 
 
 # Application definition
@@ -41,8 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'product',
-    'rest_framework'
+    'product'
 ]
 
 MIDDLEWARE = [
@@ -80,11 +79,16 @@ WSGI_APPLICATION = 'base.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+   'default': {
+       'ENGINE': 'django.db.backends.postgresql_psycopg2',
+       'NAME': 'dfbvd78a706fsp',
+       'USER': 'gonpqmckbpgwce',
+       'PASSWORD': '049d2eeb46537cb40cef15d9d066ca2e56b21e0a6e2aa1ebcb3c2c141dda5bf9',
+       'HOST': 'ec2-35-168-122-84.compute-1.amazonaws.com',
+       'PORT': '5432',
+   }
 }
+
 
 
 # Password validation
@@ -126,11 +130,10 @@ STATIC_ROOT = path.join(BASE_DIR, "staticfiles")
 STATICFILES_DIRS = [
     path.join(BASE_DIR, "static")
 ]
-# django_heroku.settings(locals())
+django_heroku.settings(locals())
 
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
