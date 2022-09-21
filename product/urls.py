@@ -15,7 +15,7 @@ urlpatterns = [
     path('produto/delete_regs/<int:id>/', delete_regs , name="delete_regs"),
     path('produto/add/<int:id>/', add_product, name="add_product"),
     path('produto/dashboard/',dashboard, name="dashboard"),
-    #Apis views
+    #Apis view
     path('produto/api/v1/<int:pk>/',product_view_api_v1,name="produto_api_v1"),
     path('produto/api/v2/<int:pk>/',product_view_api_v2,name="produto_api_v2"),
     path('produto/api/v1/',product_list_views_api_v1,name="produto_api_list_v1"),
