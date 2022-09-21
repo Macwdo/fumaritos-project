@@ -59,7 +59,7 @@ def sell_product(request, id):
         return redirect(reverse('product:home')) 
      
     if vendas != 0 and produto.estoque >= int(vendas):
-        if produto.vendidos > 0 and request.POST.get('excluir') == None:
+        if produto.vendidos > 0 and request.POST.get('excluir') != 'Excluir':
             messages.success(request, f'Foram vendidos {vendas} produtos !')
             produto.estoque -= int(vendas)
             produto.vendidos += int(vendas)
@@ -113,8 +113,6 @@ def sell_product(request, id):
             produto.vendidos -= int(vendas)
             produto.save()
             messages.success(request,f'Venda corrigida, existem {produto.vendidos} vendas agora !')
-
-                
 
         return redirect(reverse('product:home'))
     
