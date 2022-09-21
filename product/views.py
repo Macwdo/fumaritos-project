@@ -93,7 +93,7 @@ def sell_product(request, id):
                 dashboard_data.custo_tot += (int(vendas) * produto.custo)
                 dashboard_data.vendidos += (int(vendas))
                 dashboard_data.save()
-                print('existe')
+                return redirect(reverse('product:home'))
                 
             else:
                 preco_tot = lucro_tot = custo_tot = 0
@@ -109,8 +109,8 @@ def sell_product(request, id):
                     custo_tot=custo_tot,
                     vendidos=1
                     )
+                return redirect(reverse('product:home'))
 
-    return redirect(reverse('product:home'))
     
     else:
         messages.error(request, f'Não foi possível efetuar a venda existem {produto.estoque} produtos desse no estoque')
