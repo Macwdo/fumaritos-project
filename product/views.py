@@ -59,7 +59,7 @@ def sell_product(request, id):
         return redirect(reverse('product:home')) 
              
     if vendas != 0 and produto.estoque >= int(vendas):
-        messages.success(request, f'Foram vendidos {vendas} produtos !'))
+        messages.success(request, f'Foram vendidos {vendas} produtos !')
         produto.estoque -= int(vendas)
         produto.vendidos += int(vendas)
         if produto.vendidos >= 0:
@@ -108,9 +108,9 @@ def sell_product(request, id):
                     custo_tot=custo_tot,
                     vendidos=1
                     )
-            return redirect(reverse('product:home'))
-
     
+                return redirect(reverse('product:home'))
+
     else:
         messages.error(request, f'Não foi possível efetuar a venda existem {produto.estoque} produtos desse no estoque')
         return redirect(reverse('product:home'))        
