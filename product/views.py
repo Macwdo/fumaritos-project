@@ -177,6 +177,7 @@ def create_product_view(request):
 def delete_product(request, id):
     if request.method == "POST":
         produto = Produto.objects.filter(id=id)
+        messages.success(request,f'Produto : {produto} deleteado com sucesso')
         produto.delete()
     return redirect(reverse('product:home'))
 
@@ -184,8 +185,9 @@ def delete_product(request, id):
 def delete_dashboard_id(request, id):
     if request.method == "POST":
         dashboard = DashBoard.objects.filter(id=id)
+        messages.success(request,f'Registro : {dashboard} deleteado com sucesso')
         dashboard.delete()
-    return redirect(reverse('product:home'))
+    return redirect(reverse('product:dashboard'))
 
 @login_required()
 def delete_regs(request, id):
