@@ -48,6 +48,7 @@ def logout_view(request):
 @login_required()
 def sell_product(request, id):
     vendas = request.POST.get('sell_qtd')
+    comprador = request.POST.get('comprador')
     produto = Produto.objects.filter(id=id).first()
     
     if vendas == '':
@@ -69,6 +70,7 @@ def sell_product(request, id):
             
 
             dados = DadosVenda.objects.create(
+                comprador=comprador,
                 produtoinfo=f"{produto.marca} {produto.sabor} {produto.puffs}",
                 quantidade=int(vendas),
                 dia=dia,
