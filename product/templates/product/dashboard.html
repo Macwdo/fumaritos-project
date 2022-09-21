@@ -93,13 +93,36 @@
                                     <td>
                                         <a href="#deleteEmployeeModal {{produto.id}}" class="deletee" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                                     </td>
-
-                                    {% endfor %}
                                 </tr>
                         </tbody>
                   </table>
             </div>        
         </div>
+
+        <div id="deleteEmployeeModal {{produto.id}}" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form method="POST" action="{% url 'product:delete_dashboard_id' produto.id %}">
+        
+                        {% csrf_token %}
+                        <div class="modal-header">						
+                            <h4 class="modal-title">Deletar Produto</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body">					
+                            <p style="font-family: 'Varela Round', sans-serif;font-weight: bold;">Você quer mesmo deletar o produto:</p><p>{{produto.marca}} {{produto.sabor}} {{produto.puffs}}</p>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                            <input type="submit" class="btn btn-danger" value="Delete">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+
         <form action="{% url 'product:logout' %}" method="post">
             {% csrf_token %}
             <button class="btn" type="submit">Deslogar</button>

@@ -181,6 +181,13 @@ def delete_product(request, id):
     return redirect(reverse('product:home'))
 
 @login_required()
+def delete_dashboard_id(request, id):
+    if request.method == "POST":
+        dashboard = DashBoard.objects.filter(id=id)
+        dashboard.delete()
+    return redirect(reverse('product:home'))
+
+@login_required()
 def delete_regs(request, id):
     if request.method == "POST":
         dados = DadosVenda.objects.filter(id=id)
