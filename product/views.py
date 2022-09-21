@@ -59,10 +59,10 @@ def sell_product(request, id):
         return redirect(reverse('product:home')) 
              
     if vendas != 0 and produto.estoque >= int(vendas):
-        if produto.vendidos > 0:
-            messages.success(request, f'Foram vendidos {vendas} produtos !')
-            produto.estoque -= int(vendas)
-            produto.vendidos += int(vendas)
+        messages.success(request, f'Foram vendidos {vendas} produtos !'))
+        produto.estoque -= int(vendas)
+        produto.vendidos += int(vendas)
+        if produto.vendidos >= 0:
             today = date.today()
             dia = today.strftime("%d/%m/%Y")
             hora = timezone.localtime(timezone=pytz.timezone('America/Sao_Paulo')).strftime("%H:%M:%S")
