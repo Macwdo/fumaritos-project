@@ -49,7 +49,7 @@
 
 						<div id="excludeEmployeeModal {{dado.id}}" class="modal fade">
 							<div class="modal-dialog">
-								<div class="modal-content">
+								<div class="modal-content " style="position: fixed;">
 									<form method="POST" action="{% url 'product:delete_regs' dado.id %}">
 						
 										{% csrf_token %}

@@ -1,7 +1,7 @@
 
 <div id="sellEmployeeModal {{produto.id}}" class="modal fade">
     <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal-content" style="position: fixed;">
             <form method="POST" action="{% url 'product:sell_product' produto.id %}">
 
                 {% csrf_token %}
@@ -26,7 +26,7 @@
 
 <div id="editEmployeeModal {{produto.id}}" class="modal fade">
     <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal-content" style="position: fixed;">
             <form method="POST" action="{% url 'product:add_product' produto.id %}">
                 {% csrf_token %}
                 <div class="modal-header">						
@@ -52,7 +52,7 @@
 </div> 
 <div id="deleteEmployeeModal {{produto.id}}" class="modal fade">
     <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal-content" style="position: fixed;">
             <form method="POST" action="{% url 'product:delete_product' produto.id %}">
 
                 {% csrf_token %}

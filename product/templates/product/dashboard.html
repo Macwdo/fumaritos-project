@@ -96,7 +96,7 @@
 
                                     <div id="deleteEmployeeModal {{produto.id}}" class="modal fade">
                                         <div class="modal-dialog">
-                                            <div class="modal-content">
+                                            <div class="modal-content" style="position: fixed;">
                                                 <form method="POST" action="{% url 'product:delete_dashboard_id' produto.id %}">
                                     
                                                     {% csrf_token %}
