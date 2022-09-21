@@ -203,7 +203,7 @@ def delete_regs(request, id):
 
 @login_required()
 def dashboard(request):
-    produtos = DashBoard.objects.all().order_by('-marca')
+    produtos = DashBoard.objects.all().order_by('-vendidos')
     mais_vendido = DashBoard.objects.all().order_by('-vendidos').first()
     maior_lucro = DashBoard.objects.all().order_by('-lucro_tot').first()
     lucro = tot_vendas = 0
