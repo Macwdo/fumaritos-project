@@ -110,7 +110,7 @@ def sell_product(request, id):
                     vendidos=1
                     )
 
-            return redirect(reverse('product:home'))
+    return redirect(reverse('product:home'))
     
     else:
         messages.error(request, f'Não foi possível efetuar a venda existem {produto.estoque} produtos desse no estoque')
