@@ -1,0 +1,103 @@
+{% load static %}
+
+<html>
+    {% include "product/head.html" %}
+    <body>
+        {% include "product/header.html" %}
+        <style>
+            table.table td a.deletee {
+                color: #ff0000;
+            }
+        </style>
+        <div class="container">
+            <div class="row">
+                <div class="card" style="width: 20rem;">
+                    <div class="card-body">
+                        <h3 class="card-title"><b>Mais vendido</b></h3>
+                        <h4 class="card-text">
+                            <b>Marca:</b>
+                            {{mais_vendido.marca}}<br>
+                            <b>Sabor:</b>
+                            {{mais_vendido.sabor}}<br>
+                            <b>Puffs:</b>
+                            {{mais_vendido.puffs}}
+                        </h4>
+                        <h4 class="card-title"><b>{{mais_vendido.vendidos}}</b> Produtos R$<b>{{mais_vendido.lucro_tot}}</b></h4>
+                    </div>
+                </div>
+            <div class="card" style="width: 20rem;">
+                <div class="card-body">
+                    <h3 class="card-title"><b>Maior lucro</b></h3>
+                    <h4 class="card-text">
+                        <b>Marca:</b>
+                        {{maior_lucro.marca}}<br>
+                        <b>Sabor:</b>
+                        {{maior_lucro.sabor}}<br>
+                        <b>Puffs:</b>
+                        {{maior_lucro.puffs}}
+                    </h4>
+                    <h4 class="card-title"><b>{{maior_lucro.vendidos}}</b> Produtos R$<b>{{maior_lucro.lucro_tot}}</b></h4>
+                </div>
+            </div>
+        </div>
+
+            <div class="table-responsive">
+                <div class="table-wrapper">
+                    <div class="table-title">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <h2><b>Informação financeiras</b></h2>
+                            </div>
+                            <div class="col-xs-6">
+                                <p class="btn btn-success" ><i class="material-icons">&#xe53e;</i> <span>Lucro total R$ {{lucro_total}}</span></p>
+                                <p class="btn btn-success" ><i class="material-icons">&#xe933;</i> <span>Vendas: <b>{{vendidos}}</b></span></p>
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <span style="font-family: 'Varela Round', sans-serif;font-weight: bold;">
+                                        Id
+                                    </span>
+                                </th>
+                                <th>Marca</th>
+                                <th>Sabor</th>
+                                <th>Puffs</th>
+                                <th>Vendidos</th>
+                                <th>Preço</th>
+                                <th>Custo</th>
+                                <th>Lucro</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for produto in produtos %}
+                                <tr>
+                                    <td>
+                                        <span style="font-family: 'Varela Round', sans-serif;font-weight: bold;">
+                                            {{produto.id}}
+                                        </span>
+                                    <td>{{produto.marca}}</td>
+                                    <td>{{produto.sabor}}</td>
+                                    <td>{{produto.puffs}}</td>
+                                    <td><b>Unidades</b> : {{produto.vendidos}}</td>
+                                    <td>+R${{produto.preco_tot}}</td>
+                                    <td>-R${{produto.custo_tot}}</td>
+                                    <td>R${{produto.lucro_tot}}</td>
+                                    {% endfor %}
+                                </tr>
+                        </tbody>
+                  </table>
+            </div>        
+        </div>
+        <form action="{% url 'product:logout' %}" method="post">
+            {% csrf_token %}
+            <button class="btn" type="submit">Deslogar</button>
+        </form>
+    </body>
+
+</html>
