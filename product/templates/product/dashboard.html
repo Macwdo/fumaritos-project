@@ -71,6 +71,8 @@
                                 <th>Preço</th>
                                 <th>Custo</th>
                                 <th>Lucro</th>
+                                <th>Excluir</th>
+
 
                             </tr>
                         </thead>
@@ -88,6 +90,10 @@
                                     <td>+R${{produto.preco_tot}}</td>
                                     <td>-R${{produto.custo_tot}}</td>
                                     <td>R${{produto.lucro_tot}}</td>
+                                    <td>
+                                        <a href="#deleteEmployeeModal {{produto.id}}" class="deletee" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                    </td>
+
                                     {% endfor %}
                                 </tr>
                         </tbody>
