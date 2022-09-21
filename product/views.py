@@ -106,7 +106,7 @@ def sell_product(request, id):
                     lucro_tot=lucro_tot,
                     preco_tot=preco_tot,
                     custo_tot=custo_tot,
-                    vendidos=1
+                    vendidos=int(vendas)
                     )
     
                 return redirect(reverse('product:home'))
