@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecurefsafsafsa-sx2v@fzav1=^%r178)b+53r5+!p-y5_5s*ek4g(dn
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['fumaritos.herokuapp.com'']
+ALLOWED_HOSTS = ['https://fumaritos.herokuapp.com/']
 
 
 # Application definition
