@@ -36,4 +36,4 @@ class Produto(models.Model):
     vendidos = models.IntegerField(default=0)
     
     def __str__(self):
-        return self.sabor
+        return self.marca + self.sabor + self.puffs
