@@ -180,7 +180,7 @@ def create_product_view(request):
 @login_required()
 def delete_product(request, id):
     if request.method == "POST":
-        produto = Produto.objects.filter(id=id)
+        produto = Produto.objects.filter(id=id).first()
         messages.success(request,f'Produto : {produto} foi deleteado com sucesso')
         produto.delete()
     return redirect(reverse('product:home'))
@@ -197,7 +197,7 @@ def delete_dashboard_id(request, id):
 def delete_regs(request, id):
     if request.method == "POST":
         dados = DadosVenda.objects.filter(id=id).first()
-        messages.success(request,f'O Registro {dados.first()} foi deletado com sucesso.')
+        messages.success(request,f'O Registro {dados} foi deletado com sucesso.')
         dados.delete()
     return redirect(reverse('product:history_info'))
 
