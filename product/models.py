@@ -11,6 +11,9 @@ class DashBoard(models.Model):
     preco_tot = models.FloatField(default=0)
     custo_tot = models.FloatField(default=0)
     
+    def __str__(self):
+        return self.marca + self.sabor +str(self.puffs)
+    
 
 class DadosVenda(models.Model):
     comprador = models.CharField(max_length=60,default="Não Informado")
