@@ -18,7 +18,7 @@ class DashBoard(models.Model):
 class DadosVenda(models.Model):
     comprador = models.CharField(max_length=60,default="Não Informado")
     produtoinfo = models.CharField(max_length=68)
-    quantidade = models.CharField(max_length=2)
+    quantidade = models.IntegerField()
     dia = models.CharField(max_length=12)
     hora = models.CharField(max_length=9)
     
