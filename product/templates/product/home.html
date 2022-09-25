@@ -7,19 +7,7 @@
 
         {% include 'product/table_part.html' %}
         {% include 'product/register_part.html' %}
-        {% if messages %}
-                {% for message in messages %}
-                {% if message.tags == 'success' %}
-                    <div class="alert alert-success" role="alert" >
-                        {{ message }}
-                    </div>
-                {% else %}
-                    <div class="alert alert-danger" role="alert" >
-                        {{ message }}
-                    </div>
-                {% endif %}
-                {% endfor %}
-        {% endif %}
+        
 
         <form action="{% url 'product:logout' %}" method="post">
             {% csrf_token %}

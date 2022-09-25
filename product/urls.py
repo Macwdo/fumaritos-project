@@ -17,10 +17,19 @@ urlpatterns = [
     path('produto/add/<int:id>/', add_product, name="add_product"),
     path('produto/dashboard/',dashboard, name="dashboard"),
     #Apis view
-    path('produto/api/v1/<int:pk>/',product_view_api_v1,name="produto_api_v1"),
-    path('produto/api/v2/<int:pk>/',product_view_api_v2,name="produto_api_v2"),
-    path('produto/api/v1/',product_list_views_api_v1,name="produto_api_list_v1"),
-    path('produto/api/v2/',product_list_views_api_v2,name="produto_api_list_v2"),
+    path('produto/api/v1/<int:pk>',product_view_api_v1,name="produto_api_v1"),
+    path('produto/api/v2/<int:pk>',product_view_api_v2,name="produto_api_v2"),
+    path('produto/api/v1',product_list_views_api_v1,name="produto_api_list_v1"),
+    path('produto/api/v2',product_list_views_api_v2,name="produto_api_list_v2"),
+    #---------------------
+    path('produto/dashboard/api/v1/',dashboard_list_api_v1,name="dashboard_api_v1"),
+    path('produto/dashboard/api/v1/<int:pk>',dashboard_view_api_v1,name="dashboard_api_v1"),
+    #---------------------
+    path('produto/dadosvenda/api/v1/',dadosvenda_list_api_v1,name="dadosvenda_api_v1"),
+    path('produto/dadosvenda/api/v1/<int:pk>',dadosvenda_view_api_v1,name="dadosvenda_api_v1"),
+
+
+
 
 
 

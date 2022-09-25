@@ -51,6 +51,12 @@ def sell_product(request, id):
     comprador = request.POST.get('comprador')
     produto = Produto.objects.filter(id=id).first()
     
+    if str(comprador) == "" or str(comprador).isspace():
+        print(str(comprador), str(comprador).isspace())
+        messages.error(request, 'Informe o nome do comprador !')
+        return redirect(reverse('product:home')) 
+    
+    
     if vendas == '':
         messages.error(request, 'Insira a quantidade de produtos válida para ser vendido.')
         return redirect(reverse('product:home'))  
@@ -110,7 +116,7 @@ def sell_product(request, id):
                     lucro_tot=lucro_tot,
                     preco_tot=preco_tot,
                     custo_tot=custo_tot,
-                    vendidos=int(vendas)
+                    vendidos=int(vendas),
                     )
     
                 return redirect(reverse('product:home'))
