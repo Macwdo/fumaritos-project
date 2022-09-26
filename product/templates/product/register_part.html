@@ -8,30 +8,13 @@
                 <div class="modal-body">					
                     <form method="POST" action="{% url "product:create_product_view" %}">
                         {% csrf_token %}
-                        <div class="form-group">
-                          <label for="formGroupExampleInput">Marca</label>
-                          <input type="text" class="form-control" name="marca">
-                        </div>
-                        <div class="form-group">
-                          <label for="formGroupExampleInput2">Sabor</label>
-                          <input type="text" class="form-control" name="sabor" placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <label for="formGroupExampleInput">Puffs</label>
-                            <input  maxlength="5" type="number" class="form-control" name="puffs"placeholder="">
-                          </div>
-                          <div class="form-group">
-                            <label for="formGroupExampleInput2">Quantidade</label>
-                            <input type="number" class="form-control" name="qtd" placeholder="">
-                          </div>
-                          <div class="form-group">
-                            <label for="formGroupExampleInput2">Custo</label>
-                            <input type="number" step="0.01" class="form-control" name="custo" placeholder="">
-                          </div>
-                          <div class="form-group">
-                            <label for="formGroupExampleInput2">Preço</label>
-                            <input type="number" step="0.01" class="form-control" name="preco" placeholder="">
-                          </div>
+                            {% for fields in form %}
+                            <div class="form-group">
+                                <label for="{{fields.id_for_label}}">
+                                    {{fields.label}} {{fields}}
+                                </label>
+                              </div>
+                            {% endfor %}
                 </div>
                 <div class="modal-footer">
                     <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">

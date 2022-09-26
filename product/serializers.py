@@ -14,8 +14,9 @@ class ProductSerializers(serializers.ModelSerializer):
         
     def validate(self, attrs):
         super().validate(attrs)
-        if self.instance.puffs is not None and attrs.get("puffs") is None:
-            attrs["puffs"] = self.instance.puffs        
+        if self.instance:
+            if self.instance.puffs is not None and attrs.get("puffs") is None:
+                attrs["puffs"] = self.instance.puffs        
         
         if len(attrs.get('puffs')) > 4:
             raise serializers.ValidationError(
@@ -26,7 +27,6 @@ class ProductSerializers(serializers.ModelSerializer):
         return super().validate(attrs)
     
     def validate_puffs(self,value):
-        print(str(value).isnumeric())
         if str(value).isnumeric():
             if len(value) > 4:
                 raise serializers.ValidationError(
