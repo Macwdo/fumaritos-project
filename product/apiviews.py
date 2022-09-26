@@ -39,7 +39,7 @@ def product_view_api_v1(request,pk):
 @api_view(http_method_names=['GET','POST'])
 def product_list_views_api_v1(request):
     if request.method == "GET":
-        produto = Produto.objects.all()
+        produto = Produto.objects.all().order_by('-id')
         produto_dict = ProductSerializers(
             instance=produto,
             many=True,

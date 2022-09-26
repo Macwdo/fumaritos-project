@@ -8,13 +8,16 @@ from .models import Produto, DadosVenda, DashBoard
 from datetime import date
 from django.utils import timezone
 import pytz
+from .forms import RegisterForm
 
 
 @login_required()
 def homepage(request):
+    form = RegisterForm()
     produto = Produto.objects.all().order_by('marca')
     return render(request, 'product/home.html', context={
         'produtos': produto,
+        'form':form
     })
  
 def login_page(request):
@@ -131,7 +134,6 @@ def add_product(request, id):
         prod = Produto.objects.filter(id=id)[0]
         cont = request.POST.get("qtd_add", 0)
         exc, add = request.POST.get("exc", 'Nada'), request.POST.get("add", 'Nada')
-        print('-->',prod,cont,exc,add)
         if int(cont) > 0:
             if exc != 'Nada':
                 if prod.estoque - int(cont) < 0:
@@ -155,14 +157,14 @@ def history_info(request):
     dados = DadosVenda.objects.all().order_by('-id')
     return render(request, 'product/history_info.html', {'dados': dados})
 
-@login_required()
+@login_required() # --- Feita
 def create_product_view(request):
     if request.method == "POST":
         data = {
             'marca': request.POST.get('marca', None),
             'sabor': request.POST.get('sabor', None),
             'puffs': request.POST.get('puffs', None),
-            'estoque': request.POST.get('qtd', None),
+            'estoque': request.POST.get('estoque', None),
             'custo': request.POST.get('custo', None),
             'preco': request.POST.get('preco', None)
         }
